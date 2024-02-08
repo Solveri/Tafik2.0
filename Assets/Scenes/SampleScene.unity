@@ -1700,7 +1700,7 @@ MonoBehaviour:
     m_Bits: 8
   wall:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   legs: {fileID: 56089977}
   WallTouch: {fileID: 1334267744}
   DownForce: 3

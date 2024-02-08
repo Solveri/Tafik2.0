@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
         if (!onGround && isWallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x,Mathf.Clamp(rb.velocity.y,-wallSlideSpeed,float.MaxValue));
+            if (InputManager.instance.canJump && isWallSliding && jumpRem >0)
+            {
+                Jump();
+            }
         }
         if (onGround)
         {
@@ -74,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(rb.velocity.x, (rb.velocity.y + JumpForce)) * Time.deltaTime;
         isJumping = true;
-
+        jumpRem--;
 
 
     }
@@ -86,6 +90,10 @@ public class PlayerMovement : MonoBehaviour
     {
         //return Physics2D.CapsuleCast(legs.position,new Vector2(0.569552124f, 0.336158544f),CapsuleDirection2D.Horizontal,0,Vector2.down,0.1f,ground);
         onGround = Physics2D.OverlapCircle(legs.position,0.1f,ground);
+        if (onGround)
+        {
+            jumpRem = maxJump;
+        }
     }
     public void iSTouchingWall()
     {
