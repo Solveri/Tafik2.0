@@ -911,10 +911,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 1, g: 0, b: 0, a: 1}
+    topRight: {r: 1, g: 0.6019488, b: 0, a: 1}
+    bottomLeft: {r: 1, g: 0.6, b: 0, a: 1}
+    bottomRight: {r: 1, g: 0, b: 0, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -3920,6 +3920,7 @@ GameObject:
   - component: {fileID: 1875439603}
   - component: {fileID: 1875439602}
   - component: {fileID: 1875439601}
+  - component: {fileID: 1875439604}
   m_Layer: 5
   m_Name: AblitiesEnabled
   m_TagString: Untagged
@@ -3990,7 +3991,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1875439602}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1875439604}
+        m_TargetAssemblyTypeName: ButonsAbilities, Assembly-CSharp
+        m_MethodName: ShowPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1875439602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4029,6 +4042,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875439599}
   m_CullTransparentMesh: 1
+--- !u!114 &1875439604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875439599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf88fb6763342244ab9ae75a6064f18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 177051332}
 --- !u!1 &2040821222
 GameObject:
   m_ObjectHideFlags: 0
